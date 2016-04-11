@@ -2,6 +2,7 @@ function anim(a,anim,offx,offy)
 	if(anim.loop!=false) then
 		anim.loop=true
 	end
+
 	anim.step=anim.step or 0
 	
 	local sta=anim.start
