@@ -14,10 +14,10 @@ end
 
 -- collision with world bounds
 function coll_world(o,h,v)
-  if(h and o.x<0 or o.x+o.width>w) then
+  if(h and o.x<0 or o.x+o.width>world.w) then
     return true
   end
-  if(v and o.y<0 or o.y+o.height>h) then
+  if(v and o.y<0 or o.y+o.height>world.h) then
     return true
   end
 end
