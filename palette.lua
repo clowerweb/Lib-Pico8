@@ -1,0 +1,3 @@
+-- Coming soon.
+-- will contain functions for
+-- palette swapping and cycling
