@@ -1,6 +1,7 @@
 -- creates and runs timers
 -- also supports pausing and resuming
--- By BenWiley4000
+
+-- Contributors: BenWiley4000
 
 local timers = {}
 local last_time = nil
