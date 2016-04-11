@@ -3,7 +3,8 @@
 -- stopping on a specific frame, flipping
 -- horizontal and/or vertical, and playing
 -- in reverse
--- by Scathe (@clowerweb)
+
+-- Contributors: Scathe (@clowerweb)
 
 function anim(a,anim,offx,offy)
  if(anim.loop!=false) then
