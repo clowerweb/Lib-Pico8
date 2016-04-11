@@ -1,6 +1,5 @@
 -- creates and runs timers
 -- also supports pausing and resuming
--- start timers code
 -- By BenWiley4000
 
 local timers = {}
