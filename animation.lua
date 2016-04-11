@@ -1,3 +1,10 @@
+-- Animation function that supports
+-- animation speed, looping (or not looping),
+-- stopping on a specific frame, flipping
+-- horizontal and/or vertical, and playing
+-- in reverse
+-- by Scathe (@clowerweb)
+
 function anim(a,anim,offx,offy)
  if(anim.loop!=false) then
   anim.loop=true
