@@ -4,6 +4,7 @@
 -- by Scathe (@clowerweb)
 
 -- collisions with map tiles
+-- checks for flag 0 on a tile
 function coll_map(o)
   local x1=o.x/8
   local y1=o.y/8
