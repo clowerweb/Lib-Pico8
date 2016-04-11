@@ -1,7 +1,8 @@
 -- general collision functions
 -- there are several different ones,
 -- which should suit most needs.
--- by Scathe (@clowerweb)
+
+-- Contributors: Scathe (@clowerweb)
 
 -- collisions with map tiles
 -- checks for flag 0 on a tile
