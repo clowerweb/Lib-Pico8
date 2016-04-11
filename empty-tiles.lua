@@ -1,4 +1,6 @@
--- makes a list of empty tiles
+-- makes a list of empty tiles on a map
+-- checks for flag 0 on a tile
+-- by Scathe (@clowerweb)
 function empty_tiles(f)
  local cols=(w-8)/8
  local rows=(h-8)/8
