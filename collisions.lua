@@ -1,3 +1,7 @@
+-- general collision functions
+-- there are several different ones,
+-- which should suit most needs.
+-- by Scathe (@clowerweb)
 
 -- collisions with map tiles
 function coll_map(o)
@@ -34,6 +38,16 @@ function coll_obj(o1,o2)
    return k
   end
  end
+end
+
+-- checks if two objects occupy the same tile
+function coll_rough(a,b)
+ local ax=flr((a.x+4)/8)*8
+ local ay=flr((a.y+4)/8)*8
+ local bx=flr((b.x+4)/8)*8
+ local by=flr((b.y+4)/8)*8
+
+ return ax==bx and ay==by
 end
 
 -- pixel perfect collision
