@@ -1,5 +1,6 @@
 -- creates and runs timers
 -- also supports pausing and resuming
+-- full info: http://www.lexaloffle.com/bbs/?tid=3202
 
 -- Contributors: BenWiley4000
 
