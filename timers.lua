@@ -36,11 +36,11 @@ function update_timers ()
       local length = timer.length
       if elapsed < length then
         if timer.step_fn then
-          timer.step_fn(dt,elapsed,length)
+          timer.step_fn(dt,elapsed,length,timer)
         end  
       else
         if timer.end_fn then
-          timer.end_fn(dt,elapsed,length)
+          timer.end_fn(dt,elapsed,length,timer)
         end
         timer.active = false
       end
