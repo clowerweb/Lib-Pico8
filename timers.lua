@@ -38,11 +38,11 @@ function update_timers ()
         if timer.step_fn then
           timer.step_fn(dt,elapsed,length,timer)
         end  
-      else
+    else
+        timer.active = false
         if timer.end_fn then
           timer.end_fn(dt,elapsed,length,timer)
         end
-        timer.active = false
       end
     end
   end
