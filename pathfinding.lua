@@ -36,18 +36,12 @@ function find_path_breadth(x, y, limit, accept_child, accept_target)
 
 	local targets = {} -- list od coordinates {x}{y} as result of this function
 	local visited = {}
-	for x=0,47 do
-		visited[x] = {}
-		for y=0,47 do
-			visited[x][y]=false
-		end
-	end
 
 	local stack = {}
 	local read = 0
 	local write = 0
 	write=write + 1  stack[write] = {x,y} -- push
-	visited[x][y] = true
+	visited[x..","..y] = true
 	local dir={{x=-1,y=0},{x=1,y=0},{x=0,y=-1},{x=0,y=1} }
 
 	while write > read do
@@ -71,8 +65,8 @@ function find_path_breadth(x, y, limit, accept_child, accept_target)
 			-- child position
 			local cx = (vx+d.x)%48 -- map wrap
 			local cy = (vy+d.y)%48
-			if not visited[cx][cy] then
-				visited[cx][cy]=true
+			if not visited[cx..","..cy] then
+				visited[cx..","..cy]=true
 				if accept_child(cx,cy) then
 					write=write + 1  stack[write] = { cx, cy } -- push
 				end

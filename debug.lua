@@ -53,15 +53,18 @@ end
 --   ... do some intensive stuff ...
 --   check_cpu("this took") -- log on system console
 function check_cpu(msg)
-	if msg==nil then check_cpu_start=stat(1) return end
-	local percent = ((stat(1)-check_cpu_start)*100)
-	printh(msg.." "..flr(percent).."% of a frame")
+	local percent=0
+	if msg~=nil then
+		percent = ((stat(1)-check_cpu_start)*100)
+		printh(msg.." "..flr(percent).."% of a frame")
+	end
+	check_cpu_start=stat(1)
 	return percent
 end
 
 -- tests
 --check_cpu()
---for i = 1, 10000 do
---	printh("consume some time")
---end
+--for i = 1, 10000 do printh("consume some time") end
 --check_cpu("for loop")
+--for i = 1, 20000 do printh("consume more time") end
+--check_cpu("second for loop")
