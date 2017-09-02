@@ -68,3 +68,11 @@ end
 --check_cpu("for loop")
 --for i = 1, 20000 do printh("consume more time") end
 --check_cpu("second for loop")
+
+function print_cpu_mem()
+	color(7)
+	camera(0,0)
+	cursor(0,0)
+	print("cpu "..flr(stat(1)*100).."%")
+	print("mem "..stat(0))
+end
