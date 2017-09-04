@@ -26,10 +26,11 @@ You can now use the enums to make your code more readable:
 	end
 
 - You can resolve to its name like tiles.water.name.
-- You can resolve by its id, eg: tiles[3].name
-- you can iterate over all enum entries like: for item in all(items) do print(item.name) end
+- You can resolve by its id, eg: tiles[3].name, or by name: tiles["water"].id
 - You can offset the ids by using tiles=enum(names, 10). Useful if your sprites start at index 10.
 - You can also map arbitrary ids to objects like furniture=enum({[15]="table", [20]="chair"}).
+- you can iterate over all enum objects like: for item in items.all() do print(item.name) end
+- you can get the amount of enum entries like: items.size
 - You can use the generated objects as a starting point for more complex objects like furniture.table.heavy=true,
 or attach functionality like:
 
@@ -37,7 +38,7 @@ or attach functionality like:
 		print("Looks like a usual "..item.name)
 	end
 	actions.take.execute = function(item)
-		if not target.heavy then add(inventory, item) end
+		if not item.heavy then add(inventory, item) end
 	end
 	function onactionuse(action, item)
 		action.execute(item)
@@ -49,13 +50,24 @@ It's a trade off between tokens and elegant code.
 ]]--
 
 function enum(names, offset)
-	if offset==nil then offset=1 end
+	offset=offset or 1
 	local objects = {}
+	local size=0
 	for id,name in pairs(names) do
 		id = id + offset - 1
 		local obj = {id=id, name=name}
 		objects[name] = obj
 		objects[id] = obj
+		size=size+1
+	end
+	objects.size=size
+	objects.all = function()
+		local list = {}
+		for _,name in pairs(names) do
+			add(list,objects[name])
+		end
+		local i=0
+		return function() i=i+1 if i<=#list then return list[i] end end
 	end
 	return objects
 end
